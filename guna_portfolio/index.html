@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guna Sekar | Retail Sales Executive</title>
+  <meta name="description" content="Guna Sekar — Retail Sales Executive | System Administrator | Digital Creator" />
+  <style>
+    :root{
+      --bg1:#0b0f17; /* deep */
+      --bg2:#061428; /* deep blue */
+      --accent:#0077ff; /* krish blue */
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.06);
+      --muted: rgba(255,255,255,0.75);
+      --card-radius:18px;
+      --maxw:1100px;
+      --ff-sans: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:var(--ff-sans);-webkit-font-smoothing:antialiased;background:linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 60%);color:whitesmoke}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    /* Header */
+    header{position:fixed;left:0;right:0;top:12px;z-index:40;display:flex;align-items:center;justify-content:center}
+    header .bar{width:calc(100% - 40px);max-width:var(--maxw);background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));backdrop-filter:blur(6px);border-radius:14px;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    header .brand{display:flex;align-items:center;gap:12px}
+    header .brand .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#3a60ff);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;box-shadow:0 4px 12px rgba(0,0,0,0.5)}
+    header nav{display:flex;gap:10px;align-items:center}
+    header nav a{padding:8px 12px;border-radius:10px;font-size:14px;color:rgba(255,255,255,0.9)}
+    header nav a:hover{background:var(--glass-2)}
+
+    /* Hero */
+    .hero{padding-top:110px;padding-bottom:44px}
+    .hero-grid{display:grid;grid-template-columns:260px 1fr;gap:26px;align-items:center}
+    .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:22px;border-radius:var(--card-radius);display:flex;flex-direction:column;align-items:center;gap:16px;box-shadow:0 10px 30px rgba(2,6,23,0.65)}
+    .profile-photo{width:160px;height:160px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center}
+    .profile-photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .name-small{font-weight:700;font-size:18px}
+    .role{font-size:13px;color:var(--muted)}
+    .socials{display:flex;gap:10px}
+    .socials a{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--glass);}
+
+    .hero-content h1{font-size:30px;margin:0 0 8px 0;line-height:1.05}
+    .hero-content p.lead{margin:0 0 18px 0;color:var(--muted);font-size:15px}
+
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;font-weight:600;background:linear-gradient(90deg,var(--accent),#00b0ff);box-shadow:0 8px 30px rgba(0,119,255,0.16);color:white}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .btn-group{display:flex;gap:10px}
+
+    /* Sections */
+    section.card{margin-top:24px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:14px}
+    h2.section-title{margin:0 0 14px 0;font-size:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .skill{background:var(--glass);padding:12px;border-radius:10px}
+    .progress{height:10px;background:rgba(255,255,255,0.06);border-radius:999px;overflow:hidden}
+    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#2ac1ff)}
+
+    /* Projects */
+    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+
+    /* Contact */
+    .contact-row{display:flex;gap:16px;flex-wrap:wrap}
+    .contact-card{flex:1;min-width:220px;padding:16px;border-radius:12px;background:var(--glass)}
+
+    footer{margin:28px 0;text-align:center;color:rgba(255,255,255,0.6);font-size:13px}
+
+    /* WhatsApp floating */
+    .whatsapp{position:fixed;right:16px;bottom:18px;background:linear-gradient(135deg,var(--accent),#00b0ff);width:56px;height:56px;border-radius:999px;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,119,255,0.18);z-index:60}
+    .whatsapp a{color:white;font-size:22px}
+
+    /* small screens */
+    @media (max-width:900px){
+      .hero-grid{grid-template-columns:1fr;gap:14px;padding:0 6px}
+      header nav{display:none}
+      header .bar{padding:10px}
+      .profile-photo{width:120px;height:120px}
+    }
+
+    @media (max-width:480px){
+      .container{padding:16px}
+      .profile-photo{width:100px;height:100px}
+      .hero-content h1{font-size:24px}
+    }
+
+    /* subtle animations */
+    .fade-in{opacity:0;transform:translateY(8px);animation:fadeUp .7s forwards}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+
+    /* typing */
+    .typing{border-right:2px solid rgba(255,255,255,0.8);padding-right:6px;white-space:nowrap;overflow:hidden}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="bar container">
+      <div class="brand">
+        <div class="logo">G</div>
+        <div style="line-height:1"><strong>Guna Sekar</strong><div style="font-size:12px;color:var(--muted)">Retail Sales Executive</div></div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <aside class="profile-card fade-in">
+          <div class="profile-photo">
+            <!-- Replace assets/img/profile.jpg with your real photo -->
+            <img src="assets/img/profile.jpg" alt="Guna Sekar - Profile Photo" />
+          </div>
+          <div class="name-small">Guna Sekar</div>
+          <div class="role">Retail Sales Executive • System Administrator • Digital Creator</div>
+          <div class="socials">
+            <a title="WhatsApp" href="https://wa.me/919884776652" target="_blank" aria-label="WhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.96 11.96 0 0012 0C5.373 0 0 5.373 0 12c0 2.115.548 4.09 1.59 5.86L0 24l6.36-1.67A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12 0-3.21-1.25-6.15-3.48-8.52z" fill="white" opacity="0.06"/><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.149-.672.149-.198.297-.768.967-.942 1.165-.173.198-.347.223-.644.074-.297-.15-1.255-.462-2.39-1.475-.883-.786-1.48-1.755-1.653-2.052-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.298-.496.099-.198.05-.372-.025-.52-.074-.149-.672-1.61-.922-2.21-.242-.582-.487-.502-.672-.512l-.573-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.064 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487  .709.306 1.26.49 1.692.628.71.227 1.357.195 1.868.118.57-.085 1.758-.718 2.006-1.41.248-.692.248-1.285.173-1.41-.074-.124-.273-.198-.57-.347z" fill="white"/></svg>
+            </a>
+            <a title="LinkedIn" href="#" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="4" fill="white" opacity="0.04"/><path d="M7 10h3v9H7zM8.5 6.5a1.75 1.75 0 110 3.5 1.75 1.75 0 010-3.5zM12 10h2.8v1.22h.04c.39-.74 1.34-1.52 2.76-1.52 2.95 0 3.5 1.94 3.5 4.46V19h-3v-4.09c0-.98 0-2.24-1.36-2.24-1.36 0-1.57 1.06-1.57 2.15V19h-3V10z" fill="white"/></svg>
+            </a>
+            <a title="GitHub" href="#" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="4" fill="white" opacity="0.03"/><path d="M12 .5C5.73.5.98 5.24.98 11.5c0 4.6 2.99 8.5 7.14 9.88.52.1.71-.22.71-.5 0-.25-.01-.91-.01-1.78-2.9.63-3.5-1.4-3.5-1.4-.47-1.22-1.15-1.55-1.15-1.55-.94-.64.07-.62.07-.62 1.04.07 1.58 1.07 1.58 1.07.92 1.57 2.42 1.12 3.01.86.09-.67.36-1.12.65-1.38-2.32-.27-4.76-1.16-4.76-5.17 0-1.14.39-2.07 1.03-2.8-.1-.27-.45-1.36.1-2.83 0 0 .84-.27 2.75 1.04A9.6 9.6 0 0112 6.8c.85.004 1.71.115 2.51.337 1.9-1.31 2.74-1.04 2.74-1.04.56 1.47.21 2.56.11 2.83.64.73 1.03 1.66 1.03 2.8 0 4.02-2.45 4.9-4.78 5.16.37.32.7.95.7 1.92 0 1.39-.01 2.51-.01 2.85 0 .28.19.61.72.5 4.14-1.38 7.13-5.28 7.13-9.88C23.02 5.24 18.27.5 12 .5z" fill="white"/></svg>
+            </a>
+          </div>
+          <div style="width:100%;display:flex;justify-content:center" class="btn-group">
+            <a class="btn" target="_blank" href="https://drive.google.com/file/d/1mAgflVLUDVmEm75h6ZHpg4FkMsv-692r/view">View Resume</a>
+            <a class="btn ghost" target="_blank" href="https://drive.google.com/uc?export=download&id=1mAgflVLUDVmEm75h6ZHpg4FkMsv-692r">Download Resume</a>
+          </div>
+        </aside>
+
+        <div class="hero-content fade-in">
+          <h1>Hello — I'm <span id="typed" class="typing"></span></h1>
+          <p class="lead">Retail Sales Executive • System Administrator • Digital Creator. I build real-world solutions, manage retail operations, and create short-form content that connects with audiences.</p>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px">
+            <a class="btn" href="#projects">See Projects</a>
+            <a class="btn ghost" href="#contact">Hire / Contact</a>
+          </div>
+
+          <div class="card-section">
+            <section id="about" class="card" style="margin-bottom:12px">
+              <h2 class="section-title">About</h2>
+              <p style="color:var(--muted);margin:0 0 8px 0">I’m Guna — a Retail Sales Executive with hands-on experience in system administration and digital content creation. I love optimizing processes, solving technical problems, and producing short-form videos and thumbnails that get attention.</p>
+            </section>
+
+            <section id="skills" class="card" style="margin-top:12px">
+              <h2 class="section-title">Skills</h2>
+              <div class="grid-3">
+                <div class="skill">
+                  <strong>Retail Sales</strong>
+                  <div style="height:8px"></div>
+                  <div class="progress" aria-hidden><i style="width:90%"></i></div>
+                </div>
+                <div class="skill">
+                  <strong>System Administration</strong>
+                  <div style="height:8px"></div>
+                  <div class="progress" aria-hidden><i style="width:78%"></i></div>
+                </div>
+                <div class="skill">
+                  <strong>Mobile Editing (Canva/Alight/CapCut)</strong>
+                  <div style="height:8px"></div>
+                  <div class="progress" aria-hidden><i style="width:86%"></i></div>
+                </div>
+              </div>
+            </section>
+
+            <section id="education" class="card" style="margin-top:12px">
+              <h2 class="section-title">Education</h2>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="font-weight:700">B.Com (or your degree)</div>
+                <div style="color:var(--muted)">College / University — Year</div>
+              </div>
+            </section>
+
+            <section id="projects" class="card" style="margin-top:12px">
+              <h2 class="section-title">Selected Projects</h2>
+              <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+                <div class="project">
+                  <strong>Krishmotivates — Short-form Creator Kit</strong>
+                  <p style="color:var(--muted);margin:6px 0 0 0">A plug-and-play system of templates, captions and thumbnails to publish daily motivational content on social platforms.</p>
+                </div>
+                <div class="project">
+                  <strong>Telegram Auto-Delivery Bot</strong>
+                  <p style="color:var(--muted);margin:6px 0 0 0">A channel + bot setup to deliver digital products and accept UPI payments for automated sales.</p>
+                </div>
+              </div>
+            </section>
+
+            <section id="experience" class="card" style="margin-top:12px">
+              <h2 class="section-title">Experience</h2>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="font-weight:700">Retail Sales Executive — Company Name</div>
+                <div style="color:var(--muted)">Managed sales floor, trained new staff, hit targets and improved customer satisfaction.</div>
+              </div>
+            </section>
+
+            <section id="contact" class="card" style="margin-top:12px">
+              <h2 class="section-title">Contact</h2>
+              <div class="contact-row">
+                <div class="contact-card">
+                  <div style="font-weight:700">Email</div>
+                  <div style="color:var(--muted)">your.email@example.com</div>
+                </div>
+                <div class="contact-card">
+                  <div style="font-weight:700">Phone / WhatsApp</div>
+                  <div style="color:var(--muted)">+91 98847 76652</div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>Designed by Guna © 2025</footer>
+  </main>
+
+  <div class="whatsapp"><a href="https://wa.me/919884776652" target="_blank">💬</a></div>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',function(e){
+        e.preventDefault();
+        const t=document.querySelector(this.getAttribute('href'));
+        if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+
+    // Typing effect for name
+    const typedEl = document.getElementById('typed');
+    const texts = ['Guna Sekar'];
+    let tIndex=0, ch=0, forward=true;
+    function typeLoop(){
+      const txt = texts[tIndex];
+      if(forward){
+        ch++;
+        typedEl.textContent = txt.slice(0,ch);
+        if(ch===txt.length){ forward=false; setTimeout(typeLoop,1200); return }
+      } else {
+        ch--;
+        typedEl.textContent = txt.slice(0,ch);
+        if(ch===0){ forward=true; setTimeout(typeLoop,400); return }
+      }
+      setTimeout(typeLoop,120);
+    }
+    typeLoop();
+
+    // Simple reveal
+    window.addEventListener('load', ()=>{document.querySelectorAll('.fade-in').forEach((el,i)=>{el.style.animationDelay=(i*120)+'ms'})});
+  </script>
+</body>
+</html>
